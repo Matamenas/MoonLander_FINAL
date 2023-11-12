@@ -365,6 +365,7 @@
 "Assets/RotateWheels.cs"
 "Assets/Scripts/BombSpawnManager.cs"
 "Assets/Scripts/CrystalSpawnManager.cs"
+"Assets/Scripts/DoorOpen.cs"
 "Assets/Scripts/FollowPlayer.cs"
 "Assets/Scripts/PlayerController.cs"
 -langversion:9.0
