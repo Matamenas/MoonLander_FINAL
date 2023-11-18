@@ -7,6 +7,8 @@ TagManager:
   - DoorBottom
   - DoorTop
   - Door
+  - enemy
+  - Crystal
   layers:
   - Default
   - TransparentFX
