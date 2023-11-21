@@ -6,12 +6,24 @@ public class InventoryItem : MonoBehaviour
 {
     public static bool Inventoryitem = false;
 
-    public GameObject ItemUi;
-   
-    void Update()
+    public GameObject Item;
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if(collision.collider.CompareTag("Player"))
         {
+            Destroy(collision.gameObject);
+
+            
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Keycard"))
+        {
+            Destroy(other.gameObject);
+
             if (Inventoryitem)
             {
                 Resume();
@@ -25,13 +37,13 @@ public class InventoryItem : MonoBehaviour
 
     void Resume ()
     {
-      ItemUi.SetActive(false);
+      Item.SetActive(false);
       Inventoryitem = false;
     }
 
     void Pause ()
     {
-        ItemUi.SetActive(true);
+        Item.SetActive(true);
         Inventoryitem = true;
     }
 }
