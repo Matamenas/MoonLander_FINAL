@@ -1130,7 +1130,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.399994, y: 0}
+  m_AnchoredPosition: {x: 2.4000244, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &457368397 stripped
@@ -1757,6 +1757,8 @@ MonoBehaviour:
   turnSpeed: 40
   horizontalInput: 0
   forwardInput: 0
+  gameOverText: {fileID: 0}
+  restartBtn: {fileID: 0}
 --- !u!4 &662456842 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4763899328562670808, guid: 257a2d584dbadce4884c7d8df6c17d77, type: 3}
@@ -2508,15 +2510,13 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
+  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
-  m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
-  m_UseCustomTrailVertexStreams: 0
-  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -8468,6 +8468,8 @@ MonoBehaviour:
   bombPrefabs:
   - {fileID: 100000, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
   - {fileID: 100000, guid: 8f445961f3af4734eab6b615aef5f1e5, type: 3}
+  maxBombs: 10
+  BombCount: 0
 --- !u!4 &1541173930
 Transform:
   m_ObjectHideFlags: 0

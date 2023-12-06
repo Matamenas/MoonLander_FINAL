@@ -1,0 +1,46 @@
+public var ball : GameObject;// the GameObject representing 'ball' (to be spawned)
+public var spawnPosition : Vector3;// the position of the spawned GameObject
+public var spawnLimit : int;// the max amount of GameObjects that can be spawned
+public var spawnCount : int;// the current amount of spawned GameObjects
+public var spawn : boolean;// if the GameObjects are allowed to spawn
+public var waitTime : float;// the amount of time (delay) to wait before re-spawning
+public var timer : float = 0.0;// the current time in seconds
+
+function Start ()
+{
+	
+}
+
+function Update ()
+{
+	// check if GameObjects (the ball) can be spawned
+	if ( spawn )
+	{
+		timer += Time.deltaTime;
+		
+		// check if the timer has reached the wait time
+		if ( timer > waitTime )
+		{
+			// check if the current spawn amount is below the limit
+			if ( spawnCount < spawnLimit )
+			{
+				Spawn ();// spawn the GameObject
+				timer = 0.0;// reset the timer
+			}
+			else
+			{
+				spawn = false;
+				Debug.Log ( "Spawn Limit Has Been Reached!" );
+			}
+		}
+	}
+}
+
+// spawn the GameObject
+function Spawn ()
+{
+	spawnPosition = Vector3 ( -2.77, 3.3, 0 );// set the position for the spawned GameObject
+	Instantiate ( ball, spawnPosition, Quaternion.identity );// clone/duplicate the given object
+	spawnCount++;// add to the current amount of spawned GameObjects (in your case, the number of balls)
+	Debug.Log ( "Spawned GameObject #" + spawnCount );
+}

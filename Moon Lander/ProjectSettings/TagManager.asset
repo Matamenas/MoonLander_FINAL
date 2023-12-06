@@ -4,13 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Bad
+  - Keycard
+  - Door
   - DoorBottom
   - DoorTop
-  - Door
   - enemy
-  - Crystal
-  - Keycard
-  - invKey
+  - KeyPickup
   layers:
   - Default
   - TransparentFX
