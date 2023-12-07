@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class ObjectReplacement : MonoBehaviour
+public class InventoryItem : MonoBehaviour
 {
     public GameObject replacementObject;    // The object to be activated after destruction
+    public GameObject task1;                // The object to be enabled after the keycard is removed
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,10 +23,24 @@ public class ObjectReplacement : MonoBehaviour
         if (replacementObject != null)
         {
             replacementObject.SetActive(true);
+            EnableTask1(); // Enable the task1 object after replacing the keycard
         }
         else
         {
             Debug.LogWarning("Replacement object is not assigned.");
+        }
+    }
+
+    private void EnableTask1()
+    {
+        // Enable the task1 object
+        if (task1 != null)
+        {
+            task1.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("Task1 object is not assigned.");
         }
     }
 }

@@ -5,8 +5,11 @@ public class TriggerExample : MonoBehaviour
     public string targetTag = "Player";
     public GameObject interactorPanel;
     public GameObject generatorPanel;
-    public GameObject keyPickupObject; // The GameObject to check if it's enabled
-    public GameObject mainDoorTrigger; // The new GameObject to enable after 'E' key is pressed
+    public GameObject keyPickupObject; 
+    public GameObject mainDoorTrigger; 
+    public GameObject task1; 
+    public GameObject nextTasks; 
+    public GameObject remGenerator; 
 
     private bool isPlayerInsideTrigger = false;
     private bool hasToggled = false;
@@ -14,15 +17,15 @@ public class TriggerExample : MonoBehaviour
 
     private void CheckKeyPickup()
     {
-        // Check if the assigned GameObject is active
+        
         if (keyPickupObject != null && keyPickupObject.activeSelf)
         {
-            // If the GameObject is active, allow the code to run
+            
             isInteractionEnabled = true;
         }
         else
         {
-            // If the GameObject is not active, disable interaction
+            
             isInteractionEnabled = false;
             if (interactorPanel != null)
             {
@@ -38,7 +41,7 @@ public class TriggerExample : MonoBehaviour
             isPlayerInsideTrigger = true;
             hasToggled = false;
 
-            // Check KeyPickupObject status before activating the interactor panel
+            
             CheckKeyPickup();
 
             if (isPlayerInsideTrigger && isInteractionEnabled && interactorPanel != null)
@@ -55,7 +58,7 @@ public class TriggerExample : MonoBehaviour
             isPlayerInsideTrigger = false;
             hasToggled = false;
 
-            // Deactivate the interactor panel regardless of isInteractionEnabled
+            
             if (interactorPanel != null)
             {
                 interactorPanel.SetActive(false);
@@ -75,22 +78,46 @@ public class TriggerExample : MonoBehaviour
             if (generatorPanel != null)
             {
                 generatorPanel.SetActive(!generatorPanel.activeSelf);
+
+                
+                if (generatorPanel.activeSelf && task1 != null)
+                {
+                    task1.SetActive(true);
+
+                   
+                    Invoke("ActivateNextTasksAndDeactivateRemGenerator", 2f);
+                }
             }
 
-            // Disable the keyPickupObject panel
+            
             if (keyPickupObject != null)
             {
                 keyPickupObject.SetActive(false);
             }
 
-            // Enable the mainDoorTrigger GameObject
+           
             if (mainDoorTrigger != null)
             {
                 mainDoorTrigger.SetActive(true);
             }
 
             hasToggled = true;
-            isInteractionEnabled = false; // Disable interaction after 'E' key is pressed
+            isInteractionEnabled = false;
+        }
+    }
+
+    private void ActivateNextTasksAndDeactivateRemGenerator()
+    {
+        
+        if (nextTasks != null)
+        {
+            nextTasks.SetActive(true);
+        }
+
+       
+        if (remGenerator != null)
+        {
+            remGenerator.SetActive(false);
         }
     }
 }

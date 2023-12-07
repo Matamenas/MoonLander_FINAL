@@ -6,7 +6,9 @@ public class SleepActivator : MonoBehaviour
     public GameObject sleepActivatePanel;
     public GameObject door1;
     public GameObject door2;
-    public GameObject task1Panel; // Renamed from additionalPanel
+    public GameObject task1Panel;
+    public GameObject sleepRemove; 
+    public GameObject generator; 
     public float panelActiveDuration = 5f;
 
     private bool isPlayerInsideTrigger = false;
@@ -43,7 +45,8 @@ public class SleepActivator : MonoBehaviour
         {
             sleepActivatePanel.SetActive(false);
             ActivateDoors();
-            ActivateTask1Panel(); // Changed function name
+            ActivateTask1Panel();
+            DeactivateSleepRemove(); 
         }
     }
 
@@ -60,11 +63,36 @@ public class SleepActivator : MonoBehaviour
         }
     }
 
-    private void ActivateTask1Panel() // Changed function name
+    private void ActivateTask1Panel()
     {
-        if (task1Panel != null) // Changed variable name
+        if (task1Panel != null)
         {
-            task1Panel.SetActive(true); // Changed variable name
+            task1Panel.SetActive(true);
+        }
+    }
+
+    private void DeactivateSleepRemove() 
+    {
+        if (sleepRemove != null)
+        {
+            Invoke("DeactivatePanelAfterDelay", 2f);
+        }
+    }
+
+    private void DeactivatePanelAfterDelay()
+    {
+        if (sleepRemove != null)
+        {
+            sleepRemove.SetActive(false);
+            ActivateGenerator();
+        }
+    }
+
+    private void ActivateGenerator()
+    {
+        if (generator != null)
+        {
+            generator.SetActive(true);
         }
     }
 }
