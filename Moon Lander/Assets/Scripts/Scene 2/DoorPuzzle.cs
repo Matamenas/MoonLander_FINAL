@@ -10,13 +10,10 @@ public class DoorController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Deactivate doors immediately
+           
             SetDoorsActive(false);
 
-            // Activate task1 after door1 is set active
-            Invoke("ActivateTask1", 2f);
-
-            // Invoke a method to reactivate doors after 10 seconds
+            
             Invoke("ReactivateDoors", 10f);
         }
     }
@@ -40,7 +37,7 @@ public class DoorController : MonoBehaviour
 
     private void ReactivateDoors()
     {
-        // Reactivate doors after the specified delay
+        
         SetDoorsActive(true);
     }
 }

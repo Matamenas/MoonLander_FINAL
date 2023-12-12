@@ -37,7 +37,7 @@ public class CableInteractor : MonoBehaviour
         remCable.SetActive(false);
         cableFixed.SetActive(true);
         padActivate.SetActive(true);
-        task1.SetActive(true); // Activate task1 after padActivate is set active
-        interact.SetActive(false); // Optional: Deactivate the interact GameObject after interaction
+        task1.SetActive(true); 
+        interact.SetActive(false); 
     }
 }
