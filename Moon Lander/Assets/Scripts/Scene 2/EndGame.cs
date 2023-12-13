@@ -99,6 +99,6 @@ public class SceneChangeOnKeyPress : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("EndGame");
     }
 }

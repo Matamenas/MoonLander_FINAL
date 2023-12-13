@@ -362,6 +362,8 @@
 "Assets/LB3D/CrabMonster/LB3DGameManager.cs"
 "Assets/LB3D/CrabMonster/Scripts/Rikayon.cs"
 "Assets/RotateWheels.cs"
+"Assets/Scripts/Endgame Script.cs"
+"Assets/Scripts/EndGameText.cs"
 "Assets/Scripts/Pause Menu.cs"
 "Assets/Scripts/Scene 1/BombSpawnManager.cs"
 "Assets/Scripts/Scene 1/Button Manager.cs"
