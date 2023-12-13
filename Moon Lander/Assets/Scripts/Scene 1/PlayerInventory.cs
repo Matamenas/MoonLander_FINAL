@@ -3,13 +3,14 @@ using UnityEngine.Events;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public int numberOfCrystals { get; private set; }
+    public int numberOfCrystals { get; set;}
+    public UnityEvent<PlayerInventory> OnCrystalCollected;
 
-    public UnityEvent<PlayerInventory> OnDiamondCollected;
 
     public void CrystalCollected()
     {
         numberOfCrystals++;
-        OnDiamondCollected.Invoke(this);
+        OnCrystalCollected.Invoke(this);
     }
+
 }

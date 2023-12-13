@@ -2,11 +2,11 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Ll]ogs/
-/[Uu]ser[Ss]ettings/
+Moon Lander/[Ll]ibrary/
+Moon Lander/[Tt]emp/
+Moon Lander/[Oo]bj/
+Moon Lander/[Ll]ogs/
+Moon Lander/[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
