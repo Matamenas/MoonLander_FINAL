@@ -8,6 +8,7 @@ public class ButtonManager : MonoBehaviour
     public void LoadScene()
     {
         SceneManager.LoadScene("Moon");
+        Time.timeScale = 1.0f;
     }
 
      public void Openurl(){
@@ -17,6 +18,6 @@ public class ButtonManager : MonoBehaviour
 
     public void Exitgame(){
         Application.Quit();
-        Debug.Log("ur mom");
+        Debug.Log("Game Exited");
         }
 }

@@ -38,4 +38,5 @@ public class CrystalSpawnManager : MonoBehaviour {
         }
         stopSpawn = false;
     }
+
 }
