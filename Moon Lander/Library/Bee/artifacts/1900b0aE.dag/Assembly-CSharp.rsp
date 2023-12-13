@@ -364,6 +364,7 @@
 "Assets/Scripts/Endgame Script.cs"
 "Assets/Scripts/EndGameText.cs"
 "Assets/Scripts/Pause Menu.cs"
+"Assets/Scripts/Scene 1/ArrowBobbing.cs"
 "Assets/Scripts/Scene 1/BombSpawnManager.cs"
 "Assets/Scripts/Scene 1/Button Manager.cs"
 "Assets/Scripts/Scene 1/CrystalManager.cs"

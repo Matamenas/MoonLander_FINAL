@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public float forwardInput;
 
     public TextMeshProUGUI gameOverText;
+    
     public TextMeshProUGUI winText;
     public Button restartBtn;
 
@@ -20,10 +21,18 @@ public class PlayerController : MonoBehaviour
 
     int newCrystalCount;
 
+    public GameObject objectToActivate;
+    public Collider boxColliderToActivate;
+
     // Start is called before the first frame update
     void Start()
     {
+
         inventory = inventory.GetComponent<PlayerInventory>();
+
+        objectToActivate =.CompareTag("");
+
+
     }
 
     // Update is called once per frame
@@ -33,10 +42,10 @@ public class PlayerController : MonoBehaviour
         forwardInput = Input.GetAxis("Vertical");
         
         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
-        //transform.Translate(Vector3.right * Time.deltaTime * turnSpeed * horizontalInput);
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
 
-        if (inventory.numberOfCrystals == 10)
+        // when the number of crystals collected reaches the inputed number enable the win game method
+        if (inventory.numberOfCrystals == 1)
         {
             WinGame();
         }
@@ -64,12 +73,11 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    // Game Over But you won!
+    // Game Over But you move on to the next phase!
     public void WinGame()
     {
-            winText.gameObject.SetActive(true);
-            restartBtn.gameObject.SetActive(true);
-            Time.timeScale = 0f;      
+            objectToActivate.gameObject.SetActive(true);
+            boxColliderToActivate.enabled = true;
     }
 
 

@@ -12,9 +12,9 @@ public class FollowPlayer : MonoBehaviour {
 
     /* Similarly to our Prototype 1, we create a private variable called 'offset'
     that allow us to specify a specific offset for our camera. This means that
-    our camera is positioned 4 'y' units above the car, and -7 'z' units
+    our camera is positioned 6 'y' units above the car, and -17 'z' units
     behind our car. */
-    private Vector3 offset = new Vector3(0, 4, -10);
+    private Vector3 offset = new Vector3(0, 6, -17);
 
     /* This 'smoothSpeed' variable allows us to control at what speed the camera
     is going to follow the player */

@@ -11,6 +11,8 @@ TagManager:
   - DoorTop
   - enemy
   - KeyPickup
+  - Arrow
+  - SceneTrigger
   layers:
   - Default
   - TransparentFX
