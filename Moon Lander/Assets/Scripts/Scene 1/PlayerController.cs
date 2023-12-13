@@ -13,25 +13,23 @@ public class PlayerController : MonoBehaviour
     public float forwardInput;
 
     public TextMeshProUGUI gameOverText;
-    
-    public TextMeshProUGUI winText;
+    public TextMeshProUGUI objective;
+    public TextMeshProUGUI followArrow;
     public Button restartBtn;
-
     public PlayerInventory inventory;
 
-    int newCrystalCount;
+    public GameObject arrow;
+    public GameObject sceneTrigger;
 
-    public GameObject objectToActivate;
-    public Collider boxColliderToActivate;
+    public AudioClip forwardSoundClip;
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
         inventory = inventory.GetComponent<PlayerInventory>();
-
-        objectToActivate =.CompareTag("");
-
+        objective.gameObject.SetActive(true);
 
     }
 
@@ -40,12 +38,23 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
-        
+
+
         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
 
-        // when the number of crystals collected reaches the inputed number enable the win game method
-        if (inventory.numberOfCrystals == 1)
+        if (forwardInput > 0 || forwardInput < -1)
+        {
+            // check if the audio is not playing already and play audio
+            if (!audioSource.isPlaying)
+            {
+                // Play the forward sound
+                audioSource.clip = forwardSoundClip;
+                audioSource.Play();
+            }
+        }
+            // when the number of crystals collected reaches the inputed number enable the win game method
+            if (inventory.numberOfCrystals == 10)
         {
             WinGame();
         }
@@ -59,6 +68,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "Bad")
         {
+            audioSource.Stop();
             gameOverText.gameObject.SetActive(true);
             restartBtn.gameObject.SetActive(true);
             Time.timeScale = 0f;
@@ -75,9 +85,11 @@ public class PlayerController : MonoBehaviour
 
     // Game Over But you move on to the next phase!
     public void WinGame()
-    {
-            objectToActivate.gameObject.SetActive(true);
-            boxColliderToActivate.enabled = true;
+    {   
+        objective.gameObject.SetActive(false);
+        followArrow.gameObject.SetActive(true);
+        sceneTrigger.SetActive(true);
+        arrow.SetActive(true);
     }
 
 
