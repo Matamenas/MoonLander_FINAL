@@ -2,3 +2,7 @@
 * text=auto
 *.unityweb filter=lfs diff=lfs merge=lfs -text
 .unityweb filter=lfs diff=lfs merge=lfs -text
+.data.unityweb filter=lfs diff=lfs merge=lfs -text
+*.data.unityweb filter=lfs diff=lfs merge=lfs -text
+uild.data.unityweb filter=lfs diff=lfs merge=lfs -text
+*.data filter=lfs diff=lfs merge=lfs -text
