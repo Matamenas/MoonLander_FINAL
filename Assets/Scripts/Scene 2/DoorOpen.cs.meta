@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 12c1117dbdbfc764abb0561365c1a04a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - doorOpenClip: {fileID: 8300000, guid: 482d5e1ee99cb294cbe76f2085835f61, type: 3}
+  - audioSource: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

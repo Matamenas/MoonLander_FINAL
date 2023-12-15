@@ -1,0 +1,34 @@
+Assets:
+
+https://assetstore.unity.com/packages/3d/props/exterior/modular-wooden-bridge-tiles-29501
+
+https://assetstore.unity.com/packages/2d/textures-materials/metals/metal-floor-rust-low-texture-40351
+
+https://assetstore.unity.com/packages/3d/environments/sci-fi/sci-fi-styled-modular-pack-82913
+
+https://assetstore.unity.com/packages/audio/ambient/dark-future-cyberpunk-soundtrack-126
+
+https://assetstore.unity.com/packages/3d/environments/sci-fi/planet-earth-free-23399
+
+https://assetstore.unity.com/packages/3d/vehicles/space/lowpolyspaceshippack-196496
+
+https://assetstore.unity.com/packages/3d/environments/fantasy/translucent-crystals-106274
+
+
+
+Music & Sounds:
+
+MAIN SOUNDTRACK : https://assetstore.unity.com/packages/audio/ambient/dark-future-cyberpunk-soundtrack-126026
+
+CAR SOUNDS : https://assetstore.unity.com/packages/audio/sound-fx/transportation/i6-german-free-engine-sound-pack-106037
+
+Door Sounds: https://www.youtube.com/watch?v=xsClyPbqdXk (edited from this using audacity)
+
+Walking Sounds: https://www.youtube.com/watch?v=hHZme8gShII
+
+Picking up the collectible sound: https://www.youtube.com/watch?v=npL3NfpOd9A (edited from this using audacity)
+
+Death Noise: https://www.youtube.com/watch?v=LesARFyzWqI
+
+
+
